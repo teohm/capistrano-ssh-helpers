@@ -27,7 +27,9 @@ Gem::Specification.new do |s|
     "capistrano-ssh-helpers.gemspec",
     "lib/capistrano-ssh-helpers.rb",
     "lib/capistrano-ssh-helpers/ext/local_dependency.rb",
-    "lib/capistrano-ssh-helpers/ext/remote_dependency.rb"
+    "lib/capistrano-ssh-helpers/ext/remote_dependency.rb",
+    "lib/capistrano-ssh-helpers/forward_agent.rb",
+    "lib/capistrano-ssh-helpers/git_host.rb"
   ]
   s.homepage = "http://github.com/teohm/capistrano-ssh-helpers"
   s.licenses = ["MIT"]
