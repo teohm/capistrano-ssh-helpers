@@ -6,7 +6,7 @@ require 'capistrano-ssh-helpers/ext/local_dependency'
 
 Capistrano::Configuration.instance.load do
   namespace :deploy do
-    namespace :checks do
+    namespace :forward_agent do
 
       desc <<-DESC
         Add check to ensure local SSH agent has identity key.
@@ -14,7 +14,7 @@ Capistrano::Configuration.instance.load do
         The check is added to deploy:check, when ssh_options[:forward_agent]
         is set to true.
       DESC
-      task :forward_agent_has_key do
+      task :check do
         if ssh_options[:forward_agent]
           depend :local, :run_cmd, 'ssh-add -l',
             /no identities/, false,
@@ -25,6 +25,6 @@ Capistrano::Configuration.instance.load do
     end
   end
 
-  before 'deploy:check', 'deploy:checks:forward_agent_has_key'
+  before 'deploy:check', 'deploy:forward_agent:check`'
 
 end

@@ -6,7 +6,7 @@ require 'capistrano-ssh-helpers/ext/local_dependency'
 
 Capistrano::Configuration.instance.load do
   namespace :deploy do
-    namespace :checks do
+    namespace :git_host do
 
       desc <<-DESC
         Add check to ensure Git SSH host is verified on remote server.
@@ -14,7 +14,7 @@ Capistrano::Configuration.instance.load do
         The check is added to deploy:check, when :scm is set to :git
         and :repository looks like a ssh path/url.
       DESC
-      task :check_git_host do
+      task :check do
         return unless scm == :git
 
         LIKE_SSH_HOST = /^([^@]+@[^:]+):.*$/
@@ -37,5 +37,5 @@ Capistrano::Configuration.instance.load do
     end
   end
 
-  before 'deploy:check', 'deploy:checks:git_host_verified'
+  before 'deploy:check', 'deploy:git_host:check'
 end

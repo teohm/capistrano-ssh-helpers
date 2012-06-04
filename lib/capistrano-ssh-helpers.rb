@@ -1,2 +1,2 @@
-require 'capistrano-ssh-helpers/forward_agent_has_key'
-require 'capistrano-ssh-helpers/git_host_verified'
+require 'capistrano-ssh-helpers/forward_agent'
+require 'capistrano-ssh-helpers/git_host'

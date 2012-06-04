@@ -17,7 +17,17 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    "VERSION"
+    ".document",
+    "Gemfile",
+    "Gemfile.lock",
+    "LICENSE.txt",
+    "README.rdoc",
+    "Rakefile",
+    "VERSION",
+    "capistrano-ssh-helpers.gemspec",
+    "lib/capistrano-ssh-helpers.rb",
+    "lib/capistrano-ssh-helpers/ext/local_dependency.rb",
+    "lib/capistrano-ssh-helpers/ext/remote_dependency.rb"
   ]
   s.homepage = "http://github.com/teohm/capistrano-ssh-helpers"
   s.licenses = ["MIT"]
