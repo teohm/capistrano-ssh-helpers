@@ -25,6 +25,6 @@ Capistrano::Configuration.instance.load do
     end
   end
 
-  before 'deploy:check', 'deploy:forward_agent:check`'
+  before 'deploy:check', 'deploy:forward_agent:check'
 
 end
