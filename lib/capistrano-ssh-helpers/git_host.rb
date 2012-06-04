@@ -2,7 +2,7 @@ unless Capistrano::Configuration.respond_to?(:instance)
     abort "capistrano-checks requires Capistrano 2"
 end
 
-require 'capistrano-ssh-helpers/ext/local_dependency'
+require 'capistrano-ssh-helpers/ext/remote_dependency'
 
 Capistrano::Configuration.instance.load do
   namespace :deploy do
