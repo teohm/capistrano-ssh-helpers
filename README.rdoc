@@ -1,6 +1,40 @@
 = capistrano-ssh-helpers
 
-Description goes here.
+Provides a set of helper tasks related to SSH.
+
+== Install
+  gem install 'capistrano-ssh-helpers'
+
+For bundler, add it into your Gemfile
+
+  gem 'capistrano-ssh-helpers'
+
+== Usage
+You can include all helpers in config/deploy.rb:
+
+  require 'capistrnao-ssh-helpers' # includes all helper tasks
+
+Or only include a specific helper:
+
+  require 'capistrano-ssh-helpers/git_host'
+
+== Helpers
+
+=== git_host
+
+Add a check to ensure Git SSH host is verified on remote server.
+
+The check is added to deploy:check, when :scm is set to :git and 
+:repository looks like a ssh path/url.
+
+
+=== forward_agent
+
+Add a check to ensure local SSH agent has identity key.
+
+The check is added to deploy:check when ssh_options[:forward_agent]
+is enabled.
+
 
 == Contributing to capistrano-ssh-helpers
  
