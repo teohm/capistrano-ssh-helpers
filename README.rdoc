@@ -12,7 +12,7 @@ For bundler, add it into your Gemfile
 == Usage
 You can include all helpers in config/deploy.rb:
 
-  require 'capistrnao-ssh-helpers' # includes all helper tasks
+  require 'capistrano-ssh-helpers' # includes all helper tasks
 
 Or only include a specific helper:
 
